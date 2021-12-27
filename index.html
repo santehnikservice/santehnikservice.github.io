@@ -856,9 +856,9 @@ function generateCaptcha(){
   c = a + b;
   submitContent = '<span>' + a + '</span> + <span>' + b + '</span>' +
     ' = <input class="submit__input" type="text" maxlength="2" size="2" required />';
-jQuery(function($){
+
   $('.submit__generated')(submitContent);
-});
+
   init();
 }
 
