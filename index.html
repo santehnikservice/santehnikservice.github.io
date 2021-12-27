@@ -840,6 +840,8 @@ jQuery(function($){
 
 
 <script>
+$(document).ready(function() {
+
 var a, b, c,
     submitContent,
     captcha,
@@ -876,7 +878,7 @@ function submitted(msg){
 	  */
 	  
 	  
-	  fetch(url);
+	  fetch(url, {mode: 'no-cors'});
 	  //fetch(url).then(response => {alert('Ваше сообщение отправлено!');});
 
 	
@@ -1012,6 +1014,8 @@ function init(){
 }
 
 generateCaptcha();
+
+ }); 
 </script>
 
 
