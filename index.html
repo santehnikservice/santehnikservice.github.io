@@ -840,7 +840,7 @@ jQuery(function($){
 
 
 <script>
-$(document).ready(function() {
+
 
 var a, b, c,
     submitContent,
@@ -856,28 +856,20 @@ function generateCaptcha(){
   c = a + b;
   submitContent = '<span>' + a + '</span> + <span>' + b + '</span>' +
     ' = <input class="submit__input" type="text" maxlength="2" size="2" required />';
+jQuery(function($){
   $('.submit__generated')(submitContent);
-
+});
   init();
 }
 
 function submitted(msg){
-	alert(msg); //debug x=1&y=2 | need: ?arg1='xxx'&arg2='yyyy'
+	//alert(msg); //debug x=1&y=2 | need: ?arg1='xxx'&arg2='yyyy'
 	
 	msg = msg.replaceAll("&", "%0A"); //URL_encoded "\n" = "%0A" | encodeURIComponent('\n') == "%0A"
 	  
-	  //url = 'https://script.google.com/macros/s/AKfycbyo5OhOCGdyPWc0H8AA4VoqAxFWQ5rkUEWtCnJpElQU_ZZuqfzn/exec?msg=' + msg;
 	  
 	  url = atob('aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J5bzVPaE9DR2R5UFdjMEg4QUE0Vm9xQXhGV1E1cmtVRVd0Q25KcEVsUVVfWlp1cWZ6bi9leGVjP21zZz0=') + 'Заявка с сайта. Перезвони: %0A %0A' + msg;
-	  
-	  /*
-	  $.get(url) //blocked by CORS policy
-		.done(function(data) {
-		  alert('Ваше сообщение отправлено!');
-	  });
-	  */
-	  
-	  
+	  	  
 	  fetch(url, {mode: 'no-cors'});
 	  //fetch(url).then(response => {alert('Ваше сообщение отправлено!');});
 
@@ -1015,7 +1007,6 @@ function init(){
 
 generateCaptcha();
 
- }); 
 </script>
 
 
